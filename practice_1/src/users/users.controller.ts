@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Param, Patch, Post, Query } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -30,8 +31,7 @@ export class UsersController {
     }
 
     @Post("register")
-    register(@Body() newUser : {email: string, name: string, password: string, role: string}){
-        console.log("called register method")
+    register(@Body() newUser: CreateUserDto){
         return this.userServices.register(newUser)
     }
     

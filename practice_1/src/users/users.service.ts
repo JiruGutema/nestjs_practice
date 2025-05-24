@@ -36,7 +36,6 @@ export class UsersService {
         }
         return user
    }
-
    login(email: string, password: string){
     let users:any = ""
     this.users.find(user => {
