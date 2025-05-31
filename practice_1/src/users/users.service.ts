@@ -49,13 +49,20 @@ export class UsersService {
 }
     register(user: {email: string, name:string, role:string, password:string}){
         let newUser = {id: 1 + this.users.length, email: user.email, name: user.name, role: user.role, password: user.password}
+        let authenticationtoken: string = newUser.name;
+        console.log(authenticationtoken)
         this.users.push(newUser)
+
         if (this.users.includes(newUser)){
+
             return {message: "registered successfully"}
+            
         }
         else{
             return "Error in registering a user"
         }
+        
+
     }
 
 
