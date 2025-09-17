@@ -16,6 +16,7 @@ export class UsersService {
   }
 
   create(data: Partial<Users>) {
+    console.log("data:", data)
     if (!data.email || !data.password) {
       throw new Error('Email and password are required');
     }
